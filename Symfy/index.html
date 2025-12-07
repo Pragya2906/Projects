@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symfy - Symptom Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🩺 Symfy</h1>
+            <p>Your Comprehensive Symptom Identifier</p>
+        </div>
+        <div class="disclaimer">
+            <span class="disclaimer-icon">⚠️</span>
+            <p><strong>Medical Disclaimer:</strong> Symfy is for informational purposes only and is not a substitute for
+                professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or
+                qualified health provider with any questions regarding a medical condition.</p>
+        </div>
+        <div class="content">
+            <div id="errorMessage" class="error-message"></div>
+            <form id="symptomForm">
+                <div class="section">
+                    <h2>📋 Select Your Symptoms</h2>
+                    <div class="category">
+                        <div class="category-header">
+                            <span class="category-icon">🧠</span>
+                            <span>Head & Neurological</span>
+                        </div>
+                        <div class="symptoms-grid">
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="headache" name="symptom" value="headache">
+                                <label for="headache">Headache</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="dizziness" name="symptom" value="dizziness">
+                                <label for="dizziness">Dizziness</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="confusion" name="symptom" value="confusion">
+                                <label for="confusion">Confusion</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="memory-loss" name="symptom" value="memory-loss">
+                                <label for="memory-loss">Memory Issues</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="numbness" name="symptom" value="numbness">
+                                <label for="numbness">Numbness/Tingling</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <div class="category-header">
+                            <span class="category-icon">🫁</span>
+                            <span>Respiratory</span>
+                        </div>
+                        <div class="symptoms-grid">
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="cough" name="symptom" value="cough">
+                                <label for="cough">Cough</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="shortness-breath" name="symptom" value="shortness-breath">
+                                <label for="shortness-breath">Shortness of Breath</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="wheezing" name="symptom" value="wheezing">
+                                <label for="wheezing">Wheezing</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="sore-throat" name="symptom" value="sore-throat">
+                                <label for="sore-throat">Sore Throat</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="chest-pain" name="symptom" value="chest-pain">
+                                <label for="chest-pain">Chest Pain</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="congestion" name="symptom" value="congestion">
+                                <label for="congestion">Nasal Congestion</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <div class="category-header">
+                            <span class="category-icon">🍽️</span>
+                            <span>Digestive</span>
+                        </div>
+                        <div class="symptoms-grid">
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="nausea" name="symptom" value="nausea">
+                                <label for="nausea">Nausea</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="vomiting" name="symptom" value="vomiting">
+                                <label for="vomiting">Vomiting</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="diarrhea" name="symptom" value="diarrhea">
+                                <label for="diarrhea">Diarrhea</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="abdominal-pain" name="symptom" value="abdominal-pain">
+                                <label for="abdominal-pain">Abdominal Pain</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="bloating" name="symptom" value="bloating">
+                                <label for="bloating">Bloating</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="constipation" name="symptom" value="constipation">
+                                <label for="constipation">Constipation</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <div class="category-header">
+                            <span class="category-icon">🌡️</span>
+                            <span>General Symptoms</span>
+                        </div>
+                        <div class="symptoms-grid">
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="fever" name="symptom" value="fever">
+                                <label for="fever">Fever</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="fatigue" name="symptom" value="fatigue">
+                                <label for="fatigue">Fatigue</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="chills" name="symptom" value="chills">
+                                <label for="chills">Chills</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="body-aches" name="symptom" value="body-aches">
+                                <label for="body-aches">Body Aches</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="weight-loss" name="symptom" value="weight-loss">
+                                <label for="weight-loss">Unexplained Weight Loss</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="weight-gain" name="symptom" value="weight-gain">
+                                <label for="weight-gain">Unexplained Weight Gain</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="night-sweats" name="symptom" value="night-sweats">
+                                <label for="night-sweats">Night Sweats</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <div class="category-header">
+                            <span class="category-icon">❤️</span>
+                            <span>Cardiovascular</span>
+                        </div>
+                        <div class="symptoms-grid">
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="palpitations" name="symptom" value="palpitations">
+                                <label for="palpitations">Palpitations</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="irregular-heartbeat" name="symptom"
+                                    value="irregular-heartbeat">
+                                <label for="irregular-heartbeat">Irregular Heartbeat</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="swelling" name="symptom" value="swelling">
+                                <label for="swelling">Swelling (Legs/Feet)</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <div class="category-header">
+                            <span class="category-icon">🎨</span>
+                            <span>Skin & Hair</span>
+                        </div>
+                        <div class="symptoms-grid">
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="rash" name="symptom" value="rash">
+                                <label for="rash">Rash</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="itching" name="symptom" value="itching">
+                                <label for="itching">Itching</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="acne" name="symptom" value="acne">
+                                <label for="acne">Acne</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="hair-loss" name="symptom" value="hair-loss">
+                                <label for="hair-loss">Hair Loss</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="excess-hair" name="symptom" value="excess-hair">
+                                <label for="excess-hair">Excess Hair Growth</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="dry-skin" name="symptom" value="dry-skin">
+                                <label for="dry-skin">Dry Skin</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <div class="category-header">
+                            <span class="category-icon">⚧️</span>
+                            <span>Reproductive & Hormonal</span>
+                        </div>
+                        <div class="symptoms-grid">
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="irregular-periods" name="symptom" value="irregular-periods">
+                                <label for="irregular-periods">Irregular Periods</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="missed-periods" name="symptom" value="missed-periods">
+                                <label for="missed-periods">Missed Periods</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="painful-periods" name="symptom" value="painful-periods">
+                                <label for="painful-periods">Painful Periods</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="heavy-bleeding" name="symptom" value="heavy-bleeding">
+                                <label for="heavy-bleeding">Heavy Bleeding</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="hot-flashes" name="symptom" value="hot-flashes">
+                                <label for="hot-flashes">Hot Flashes</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="low-libido" name="symptom" value="low-libido">
+                                <label for="low-libido">Low Libido</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <div class="category-header">
+                            <span class="category-icon">🦴</span>
+                            <span>Musculoskeletal</span>
+                        </div>
+                        <div class="symptoms-grid">
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="joint-pain" name="symptom" value="joint-pain">
+                                <label for="joint-pain">Joint Pain</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="muscle-pain" name="symptom" value="muscle-pain">
+                                <label for="muscle-pain">Muscle Pain</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="stiffness" name="symptom" value="stiffness">
+                                <label for="stiffness">Stiffness</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="back-pain" name="symptom" value="back-pain">
+                                <label for="back-pain">Back Pain</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="weakness" name="symptom" value="weakness">
+                                <label for="weakness">Muscle Weakness</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <div class="category-header">
+                            <span class="category-icon">💧</span>
+                            <span>Urinary</span>
+                        </div>
+                        <div class="symptoms-grid">
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="frequent-urination" name="symptom"
+                                    value="frequent-urination">
+                                <label for="frequent-urination">Frequent Urination</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="painful-urination" name="symptom" value="painful-urination">
+                                <label for="painful-urination">Painful Urination</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="blood-urine" name="symptom" value="blood-urine">
+                                <label for="blood-urine">Blood in Urine</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="urgency" name="symptom" value="urgency">
+                                <label for="urgency">Urinary Urgency</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <div class="category-header">
+                            <span class="category-icon">👁️</span>
+                            <span>Eyes & Vision</span>
+                        </div>
+                        <div class="symptoms-grid">
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="blurred-vision" name="symptom" value="blurred-vision">
+                                <label for="blurred-vision">Blurred Vision</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="eye-pain" name="symptom" value="eye-pain">
+                                <label for="eye-pain">Eye Pain</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="sensitivity-light" name="symptom" value="sensitivity-light">
+                                <label for="sensitivity-light">Light Sensitivity</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="double-vision" name="symptom" value="double-vision">
+                                <label for="double-vision">Double Vision</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <div class="category-header">
+                            <span class="category-icon">👂</span>
+                            <span>Ears & Hearing</span>
+                        </div>
+                        <div class="symptoms-grid">
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="ear-pain" name="symptom" value="ear-pain">
+                                <label for="ear-pain">Ear Pain</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="hearing-loss" name="symptom" value="hearing-loss">
+                                <label for="hearing-loss">Hearing Loss</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="ringing-ears" name="symptom" value="ringing-ears">
+                                <label for="ringing-ears">Ringing in Ears</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="ear-discharge" name="symptom" value="ear-discharge">
+                                <label for="ear-discharge">Ear Discharge</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <div class="category-header">
+                            <span class="category-icon">🧘</span>
+                            <span>Mental Health</span>
+                        </div>
+                        <div class="symptoms-grid">
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="anxiety" name="symptom" value="anxiety">
+                                <label for="anxiety">Anxiety</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="depression" name="symptom" value="depression">
+                                <label for="depression">Depressed Mood</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="sleep-issues" name="symptom" value="sleep-issues">
+                                <label for="sleep-issues">Sleep Problems</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="mood-swings" name="symptom" value="mood-swings">
+                                <label for="mood-swings">Mood Swings</label>
+                            </div>
+                            <div class="symptom-checkbox">
+                                <input type="checkbox" id="loss-interest" name="symptom" value="loss-interest">
+                                <label for="loss-interest">Loss of Interest</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="other-symptom">
+                        <label for="otherSymptom">Other Symptoms (Optional)</label>
+                        <textarea id="otherSymptom"
+                            placeholder="Describe any other symptoms you're experiencing (e.g., hair on chin, irregular cycles, specific pain location)... (max 300 characters)"
+                            maxlength="300" oninput="updateCharCounter()"></textarea>
+                        <div class="char-counter" id="charCounter">0 / 300</div>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>ℹ️ Additional Details (Optional)</h2>
+                    <div class="details-section">
+                        <div class="detail-group">
+                            <label for="severity">Severity</label>
+                            <select id="severity">
+                                <option value="">Select severity</option>
+                                <option value="mild">Mild</option>
+                                <option value="moderate">Moderate</option>
+                                <option value="severe">Severe</option>
+                            </select>
+                        </div>
+                        <div class="detail-group">
+                            <label for="duration">Duration</label>
+                            <select id="duration">
+                                <option value="">Select duration</option>
+                                <option value="few-hours">A few hours</option>
+                                <option value="1-day">1 day</option>
+                                <option value="2-3-days">2-3 days</option>
+                                <option value="week">About a week</option>
+                                <option value="weeks">Several weeks</option>
+                                <option value="months">Months or longer</option>
+                            </select>
+                        </div>
+                        <div class="detail-group">
+                            <label for="onset">Onset</label>
+                            <select id="onset">
+                                <option value="">Select onset</option>
+                                <option value="sudden">Sudden</option>
+                                <option value="gradual">Gradual</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button type="submit" class="btn btn-primary" id="checkBtn">Check Symptoms</button>
+                    <button type="button" class="btn btn-secondary" onclick="resetForm()">Clear All</button>
+                </div>
+            </form>
+            <div id="results" class="results">
+                <div class="section">
+                    <h2>📊 Your Results</h2>
+                    <div id="resultsContent"></div>
+                    <div class="actions">
+                        <button type="button" class="btn btn-secondary" onclick="checkAgain()">Check New
+                            Symptoms</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script1.js"></script>
+</body>
+</html>

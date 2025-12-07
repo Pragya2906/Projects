@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding: 40px;
+    text-align: center;
+}
+h1 {
+    margin-bottom: 40px;
+    font-size: 38px;
+    letter-spacing: 1px;
+}
+
+/* --- PROJECT LIST LAYOUT --- */
+.projects {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- PROJECT CARD --- */
+.card {
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.card img {
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}

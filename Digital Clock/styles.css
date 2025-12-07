@@ -1,0 +1,38 @@
+body {
+    background-color: #212121;
+    color: #fff;
+}
+
+.nav {
+    text-align: center;
+}
+
+.nav-button {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 30px;
+    font-size: 24px;
+    background: lightgray;
+    border: 2px solid black;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+span{
+    font-size: 45px;
+}
+.center {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#clock {
+    font-size: 80px;
+    background-color: orange;
+    padding: 20px 50px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
